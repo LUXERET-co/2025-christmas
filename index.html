@@ -86,8 +86,21 @@
     }
     
     body {
-      font-family: 'Pretendard', -apple-system, sans-serif;
-    }
+    background-image: url('https://i.ifh.cc/qrvY7Y.jpg'); /* 배경 이미지 경로 */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+
+  /* 가독성용 오버레이 */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.65); /* 밝기 조절 */
+    z-index: -1;
+  }
     
     .tossface {
       font-family: Tossface;
@@ -125,7 +138,8 @@
     }
   </style>
 </head>
-<body class="bg-gradient-to-b from-red-50 to-green-50 min-h-screen flex flex-col items-center justify-center p-6">
+<body class="min-h-screen flex flex-col items-center justify-center p-6">
+
 
   <div class="max-w-lg w-full">
     <!-- 타이틀 -->
@@ -141,59 +155,69 @@
       </p>
     </div>
 
-      <!-- 선물 섹션 -->
-    <div class="bg-white rounded-2xl shadow-lg p-6 mb-6">
-      <h2 class="text-xl font-bold text-gray-900 mb-6 text-center">
-        <span class="tossface">🎁</span> 이벤트 경품 안내
-      </h2>
-      
-      <div class="space-y-4">
-        <!-- 실물 상품 (미스터리) -->
-        <div class="bg-gradient-to-r from-red-50 to-pink-100 rounded-xl p-5 border-2 border-red-200 relative overflow-hidden">
-          <div class="flex items-center justify-between mb-2">
-            <div class="flex items-center gap-2">
-              <span class="text-3xl">🤫</span>
-              <h3 class="font-bold text-gray-900 text-lg">?  ?  ?</h3>
-            </div>
-            <span class="bg-gradient-to-r from-red-500 to-pink-500 text-white text-sm font-bold px-3 py-1 rounded-full">1명</span>
-          </div>
-          <div class="flex items-center gap-2">
-            <p class="text-gray-700 text-sm font-medium">당첨자 발표 시 공개됩니다!</p>
-          </div>
-          <div class="absolute -right-8 -bottom-8 text-8xl opacity-10">🎊</div>
+<!-- 선물 섹션 -->
+<div class="bg-white rounded-2xl shadow-lg p-6 mb-6">
+  <h2 class="text-xl font-bold text-gray-900 mb-6 text-center">
+    <span class="tossface">🎁</span> 이벤트 경품 안내
+  </h2>
+  
+  <div class="space-y-4">
+    <!-- 1등: 종합과자 + 맥도날드 -->
+    <div class="bg-gradient-to-r from-red-50 to-pink-100 rounded-xl p-5 border-2 border-red-200 relative overflow-hidden">
+      <div class="flex items-center justify-between mb-2">
+        <div class="flex items-center gap-2">
+           <span class="tossface text-3xl">😶‍🌫️</span>
+          <h3 class="font-bold text-gray-900 text-lg">? ? ?</h3>
         </div>
-
-        <!-- 삐빅 이용권 -->
-        <div class="bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl p-5 border-2 border-blue-200">
-          <div class="flex items-center justify-between mb-2">
-            <div class="flex items-center gap-2">
-              <span class="text-3xl">🎟️</span>
-              <h3 class="font-bold text-gray-900 text-lg">삐빅 이용권</h3>
-            </div>
-            <span class="bg-blue-500 text-white text-sm font-bold px-3 py-1 rounded-full">2명</span>
-          </div>
-          <p class="text-gray-700 text-sm">삐빅 3개월 / 6개월 이용권</p>
-        </div>
-
-        <!-- 리턴 이용권 -->
-        <div class="bg-gradient-to-r from-purple-50 to-purple-100 rounded-xl p-5 border-2 border-purple-200">
-          <div class="flex items-center justify-between mb-2">
-            <div class="flex items-center gap-2">
-              <span class="text-3xl">🎟️</span>
-              <h3 class="font-bold text-gray-900 text-lg">리턴 이용권</h3>
-            </div>
-            <span class="bg-purple-500 text-white text-sm font-bold px-3 py-1 rounded-full">2명</span>
-          </div>
-          <p class="text-gray-700 text-sm">리턴 1개월 / 3개월 이용권</p>
-        </div>
+        <span class="bg-gradient-to-r from-red-500 to-pink-500 text-white text-sm font-bold px-3 py-1 rounded-full">1명</span>
       </div>
-
-      <div class="mt-5 bg-amber-50 rounded-lg p-4 border border-amber-200">
-        <p class="text-amber-900 text-sm font-medium text-center">
-          <span class="tossface">✨</span> 총 <strong class="text-lg">5명</strong>의 행운의 주인공을 찾습니다!
-        </p>
-      </div>
+      <p class="text-gray-700 text-sm font-medium">당첨자 발표 시 공개됩니다!</p>
+      <div class="absolute -right-8 -bottom-8 text-8xl opacity-10">🏆</div>
     </div>
+
+    <!-- 2등: 삐빅 이용권 + 커피 -->
+    <div class="bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl p-5 border-2 border-blue-200">
+      <div class="flex items-center justify-between mb-2">
+        <div class="flex items-center gap-2">
+          <span class="tossface text-3xl"> 🎟️</span>
+          <h3 class="font-bold text-gray-900 text-lg">2등</h3>
+        </div>
+        <span class="bg-blue-500 text-white text-sm font-bold px-3 py-1 rounded-full">2명</span>
+      </div>
+      <p class="text-gray-700 text-sm">삐빅 3개월 / 6개월 이용권 + 아이스 아메리카노T</p>
+    </div>
+
+    <!-- 3등: 리턴 이용권 + 커피 -->
+    <div class="bg-gradient-to-r from-purple-50 to-purple-100 rounded-xl p-5 border-2 border-purple-200">
+      <div class="flex items-center justify-between mb-2">
+        <div class="flex items-center gap-2">
+          <span class="tossface text-3xl"> 🎟️</span>
+          <h3 class="font-bold text-gray-900 text-lg">3등</h3>
+        </div>
+        <span class="bg-purple-500 text-white text-sm font-bold px-3 py-1 rounded-full">2명</span>
+      </div>
+      <p class="text-gray-700 text-sm">리턴 1개월 / 3개월 이용권 + 아이스 아메리카노T</p>
+    </div>
+
+    <!-- 참가상: 츄파춥스 -->
+    <div class="bg-gradient-to-r from-green-50 to-emerald-100 rounded-xl p-5 border-2 border-green-200">
+      <div class="flex items-center justify-between mb-2">
+        <div class="flex items-center gap-2">
+          <span class="tossface text-3xl"> 🍭</span>
+          <h3 class="font-bold text-gray-900 text-lg">참가상</h3>
+        </div>
+        <span class="bg-green-500 text-white text-sm font-bold px-3 py-1 rounded-full">20명</span>
+      </div>
+      <p class="text-gray-700 text-sm">츄파춥스 랜덤 증정</p>
+    </div>
+  </div>
+
+  <div class="mt-5 bg-amber-50 rounded-lg p-4 border border-amber-200">
+    <p class="text-amber-900 text-sm font-medium text-center">
+      <span class="tossface">✨</span> 총 <strong class="text-lg">25명</strong>의 행운의 주인공을 찾습니다!
+    </p>
+  </div>
+</div>
 
     
     <!-- 메인 이미지 카드 -->
